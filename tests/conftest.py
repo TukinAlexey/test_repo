@@ -28,10 +28,7 @@ def setup_browser(request):
     yield browser
 
     attach.add_screenshot(browser)
-
-    logs = driver.get_log('browser')
-    attach.add_logs(logs)
-
+    attach.add_logs(browser)
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
