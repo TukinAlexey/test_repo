@@ -14,7 +14,8 @@ def setup_browser(request):
         "browserVersion": "128.0",
         "selenoid:options": {
             "enableVNC": True,
-            "enableVideo": True
+            "enableVideo": True,
+            "enableLog": True
         }
     }
     options.capabilities.update(selenoid_capabilities)
@@ -27,7 +28,7 @@ def setup_browser(request):
     yield browser
 
     attach.add_screenshot(browser)
-    # attach.add_logs(browser)
+    attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
 
