@@ -1,3 +1,5 @@
+import os
+
 import allure
 from selene import have, by
 
@@ -5,7 +7,7 @@ from selene import have, by
 @allure.title("Successful fill form")
 def test_successful(setup_browser):
     browser = setup_browser
-    # my_picture = 'Picture.png'
+    my_picture = 'Picture.png'
 
 
     with allure.step("Open registrations form"):
@@ -28,7 +30,7 @@ def test_successful(setup_browser):
         browser.element('[aria-label="Choose Tuesday, January 1st, 1991"]').click()
         browser.element('#subjectsInput').type('English').press_enter()
         browser.element('[for="hobbies-checkbox-1"]').click()
-        # browser.element('#uploadPicture').send_keys(os.path.abspath(my_picture))
+        browser.element('#uploadPicture').send_keys(os.path.abspath(my_picture))
         browser.element('#currentAddress').type('RF. Moscow, Arbat, 1')
         browser.element('#react-select-3-input').type('Haryana').press_enter()
         browser.element('#react-select-4-input').type('Karnal').press_enter()
