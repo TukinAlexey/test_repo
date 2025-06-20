@@ -3,7 +3,6 @@ from selene.support.shared import browser
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
 
 from utils import attach
 
