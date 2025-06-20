@@ -1,6 +1,7 @@
 import os
 
 import allure
+from allure_commons.types import Severity
 from selene import have, by
 
 
@@ -8,7 +9,6 @@ from selene import have, by
 def test_successful(setup_browser):
     browser = setup_browser
     my_picture = 'Picture.png'
-
 
     with allure.step("Open registrations form"):
         browser.open("https://demoqa.com/automation-practice-form")
@@ -45,3 +45,12 @@ def test_successful(setup_browser):
             'RF. Moscow, Arbat, 1', 'State and City', 'Haryana Karnal',
         )
         )
+
+@allure.tag("test")
+@allure.severity(Severity.MINOR)
+@allure.label('owner', 'atukin')
+@allure.feature('Issues_name')
+@allure.story('Проверка названия Issue')
+@allure.link('https://github.com', name='Testing')
+def test_allure_labels():
+    pass
