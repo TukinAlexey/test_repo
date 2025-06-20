@@ -29,7 +29,7 @@ def setup_browser(request):
 
     attach.add_screenshot(browser)
 
-    logs = driver.get_log(browser)
+    logs = driver.get_log('browser')
     attach.add_logs(logs)
 
     attach.add_logs(browser)
